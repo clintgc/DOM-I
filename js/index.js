@@ -48,11 +48,6 @@ let navElements = siteContent["nav"];
 const siteLinks = document.querySelectorAll("nav  a"); //select all child <a> to parent <nav>
 siteLinks.forEach((item, i) => {item.textContent = siteContent['nav'][`nav-item-${i + 1}`]; });
 
-//iterate through array siteLinks to give it text content from siteContent [nav]
-//can this be done w/ a foreach method?
-//for(let i = 0; i < siteLinks.length; i++){
-//siteLinks[i].textContent = navElements[`nav-item-${i}`]};
-
 const cta = siteContent["cta"];
 const newCta = document.querySelector(".cta-text").children[0];
 newCta.textContent = cta["h1"];
@@ -63,7 +58,6 @@ newBttn.textContent=cta["button"];
 const mainContent = document.querySelector(".main-content").children;
 const topContent = mainContent[0].children;
 const bottomContent = mainContent[2].children;
-const imgContent = mainContent[1]; //I don't know what this does?
 
 topContent[0].children[0].textContent = siteContent["main-content"]["features-h4"];
 topContent[0].children[1].textContent = siteContent["main-content"]["features-content"];
@@ -88,5 +82,5 @@ contactInfo[2].textContent = siteContent["contact"]["phone"];
 contactInfo[3].textContent = siteContent["contact"]["email"];
 
 //copyright
-const copyrightInfo = document.querySelector("footer").children;
-copyrightInfo[0].textContent = siteContent["footer"]["copyright"];
+document.querySelector("footer p").textContent = siteContent["footer"]["copyright"];
+
